@@ -1,9 +1,7 @@
-// Checking if the graph has a cycle using BFS (Kahn's Algo)
+#include<bits/stdc++.h>
+using namespace std;
 
-#include <bits/stdc++.h>
-using namespace std ; 
-
-bool toposort(vector <vector <int>> adj, int V){
+vector <int>  toposort(vector <vector <int>> adj, int V){
     
     queue<int> q ; 
     vector <int> indegree(V, 0) ; 
@@ -30,12 +28,5 @@ bool toposort(vector <vector <int>> adj, int V){
             }
         }
     }
-    return (topo.size() == V? false : true ) ; 
+    return topo ; 
 }
-
-// works only for DAGs - Directed Acyclic Graphs
-// Time : O(V + E)
-// Space : ~ O(V)
-
-// Intuition : Since the topo sort only works for DAGs if these is a cycle then the sorting will stop there and the size of the topo sort vector
-// will be less than V nodes. 
