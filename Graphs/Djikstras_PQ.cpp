@@ -3,7 +3,7 @@
 // Using Priority Queue 
 #include<bits/stdc++.h>
 using namespace std;
-vector <int> djk(vector <vector<pair<int, int>>> adj, int start, int V){
+vector <int> djk(vector <vector<pair<int, int>>> &adj, int start, int V){
     priority_queue<
     pair<int,int>,
     vector<pair<int,int>>,
